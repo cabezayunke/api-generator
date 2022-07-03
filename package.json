@@ -5,12 +5,11 @@
   "main": "build/cli.js",
   "bin": "build/cli.js",
   "scripts": {
-    "prepare": "git config --local core.hooksPath .githook || echo 'Can not set git hooks'",
-    "prettier": "prettier --write .",
     "test": "jest",
     "build": "rimraf build && tsc && chmod +x build/cli.js",
     "dev": "TS_NODE_FILES=\"true\" node --inspect -r ts-node/register src/cli.ts",
     "install-cli": "npm i && npm run build && npm link",
+    "prettier": "prettier --write .",
     "lint": "eslint \"src/**/*.ts\" ",
     "pre-commit": "lint-staged"
   },

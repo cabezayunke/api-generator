@@ -4,7 +4,7 @@ import * as dotenv from 'dotenv';
 import { showError } from './common/ui/messages';
 
 const envOutput = dotenv.config({ path: __dirname + '/../.env' });
-if (envOutput.error && process.env.IGNORE_DOTENV_ERROR !== 'true') {
+if (envOutput.error) {
   showError(JSON.stringify(envOutput.error, null, 2));
   showError('Error loading your .env', 1);
 }
@@ -15,7 +15,6 @@ import './version';
 
 // commands with subcommands
 program.description('CLI tool');
-
 program
   .command('example', 'Your example command here', {
     executableFile: './example/index'

@@ -3,7 +3,7 @@ import { showError, showSuccess } from '../common/ui/messages';
 import env from './env';
 
 export default async (): Promise<void> => {
-  console.log('Upgrading genially-cli');
+  console.log('Upgrading cli');
   if (!env.CLI_LOCAL_PATH) {
     showError('Configure CLI_LOCAL_PATH in your env file please', 1);
   }
